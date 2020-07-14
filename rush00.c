@@ -6,7 +6,7 @@ void ft_putchar(c)
 	write(1, &c, 1);
 }
 
-void rush (h, v)
+void rush(int h, int v)
 {
 	int hor;
 	int ver;
@@ -25,10 +25,18 @@ void rush (h, v)
 	{
 		while(hor <=  h)
 		{
-			if(((hor==1)|| (hor == h))&&((ver == 1)||(v = ver)))
+			if(((hor==1)|| (hor == h))&&((ver == 1)||(v == ver)))
 			{
 				ft_putchar(corner);
-			}	
+			}
+			else if (((hor != 1)||(hor != h))&&( (ver == 1)||(ver == v)))
+			{
+				ft_putchar(sidesv);
+			}
+			else if (((hor == 1)||(hor == h))&&((ver != 1)||(ver != v)))
+			{
+				ft_putchar(sidesh);
+			}
 			else 
 			{
 				ft_putchar(space);
@@ -38,7 +46,7 @@ void rush (h, v)
 		}
 		write(1, "\n", 1);
 		hor = 1;
-		ver ++;
+		ver = ver +1;
 	}
 
 
@@ -47,8 +55,12 @@ void rush (h, v)
 
 
 int main()
-	{
-		rush(10,4);
-		return(0);
+{
+	int v;
+	int h;
+	v = 8;
+	h = 8;
+	rush(h , v);
+	return(0);
 
-	}
+}
