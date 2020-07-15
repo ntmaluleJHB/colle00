@@ -1,10 +1,4 @@
-#include <unistd.h>
 
-
-void ft_putchar(c)
-{	
-	write(1, &c, 1);
-}
 
 void rush(int h, int v)
 {
@@ -13,7 +7,7 @@ void rush(int h, int v)
 	hor = 1;
 	ver = 1;
 	char corner;
-	corner = 'o';
+	corner = 'b';
 	char sidesv;
 	char space;
 	char sidesh;
@@ -49,18 +43,5 @@ void rush(int h, int v)
 		ver = ver +1;
 	}
 
-
-}
-
-
-
-int main()
-{
-	int v;
-	int h;
-	v = 8;
-	h = 8;
-	rush(h , v);
-	return(0);
 
 }
